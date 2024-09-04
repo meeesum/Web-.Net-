@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="login-container">
+    <div class="login-header">
+        <h2>Welcome to TechHub Solutions</h2>
+        <p>Please choose your login type</p>
+    </div>
+    <div class="login-buttons">
+        <a href="@Url.Action("AdminLogin", "Account")" class="btn btn-primary btn-lg">Login as Admin</a>
+        <a href="@Url.Action("UserLogin", "Account")" class="btn btn-secondary btn-lg">Login as User</a>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿@model TechHub.Models.Entities.UserDashboardViewModel
+
+@{
+    ViewData["Title"] = "User Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
+                    <a href="@Url.Action("ChangePassword", "Account")" class="list-group-item list-group-item-action">Change Password</a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <h1 class="mb-4">Welcome, @Model.UserName</h1>
+
+                <!-- Ongoing Projects Section -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title text-black">Ongoing Projects</h5>
+                    </div>
+                    <div class="card-body">
+                        @if (Model.Projects.Any())
+                        {
+                            <ul class="list-group">
+                                @foreach (var project in Model.Projects)
+                                {
+                                    <li class="list-group-item">
+                                        <h6 class="mb-1">@project.Name</h6>
+                                        <p class="mb-0">@project.Description</p>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p>No ongoing projects.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

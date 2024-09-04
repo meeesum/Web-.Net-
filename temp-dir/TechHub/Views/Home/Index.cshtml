@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Welcome to TechHub";
+}
+
+<div class="jumbotron text-center bg-primary text-white py-5">
+    <h1 class="display-4">Welcome to TechHub</h1>
+    <p class="lead">Your Partner in Innovative Software Development</p>
+    <a class="btn btn-light btn-lg" href="@Url.Action("About", "Home")" role="button">Learn More About Us</a>
+</div>
+
+<div class="container">
+    <h2 class="text-center my-5">Our Expertise</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Web Development</h3>
+                    <p class="card-text">
+                        At TechHub, we create responsive, secure, and user-friendly websites that drive business growth. From e-commerce platforms to content management systems, we build solutions tailored to your needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">App Development</h3>
+                    <p class="card-text">
+                        We specialize in developing mobile applications for both iOS and Android. Our apps are designed to be intuitive, performant, and scalable, providing a seamless experience for users across devices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Artificial Intelligence</h3>
+                    <p class="card-text">
+                        Harness the power of AI with our innovative solutions. From machine learning models to AI-powered tools, we help you automate processes, gain insights, and enhance decision-making.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Cybersecurity</h3>
+                    <p class="card-text">
+                        Protect your business from cyber threats with our comprehensive cybersecurity services. We offer risk assessments, penetration testing, and custom security solutions to safeguard your digital assets.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center my-5">
+        <a class="btn btn-primary btn-lg" href="@Url.Action("Contact", "Contact")">Get in Touch</a>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿@model List<TechHub.Models.Entities.Employee>
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+
+    <!-- Change Password Button -->
+    <div class="mb-3 text-center">
+        <a href="@Url.Action("ChangePassword", "Account")" class="btn btn-warning">Change Password</a>
+    </div>
+
+    <!-- Employee List -->
+    <div class="mb-3">
+        <h2>Employees</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var employee in Model)
+                    {
+                        <tr>
+                            <td>@employee.Name</td>
+                            <td>@employee.Email</td>
+                            <td>@employee.Contact</td>
+                            <td>
+                                <a href="@Url.Action("EditEmployee", "Admin", new { id = employee.Id })" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="@Url.Action("DeleteEmployee", "Admin", new { id = employee.Id })" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="@Url.Action("Details", "Admin", new { id = employee.Id })" class="btn btn-info btn-sm">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add Employee Button -->
+    <div class="text-center">
+        <a href="@Url.Action("AddEmployee", "Admin")" class="btn btn-success">Add Employee</a>
+    </div>
+</div>
